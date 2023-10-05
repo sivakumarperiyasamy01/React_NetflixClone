@@ -1,10 +1,12 @@
 # Netflix clone
    - Create React App setup
    - TailWind CSS Setup
-
+   - Header
+   - Login form
+      
 # Features 
    - Signin/Signup page
-   -redirect to browse page
+   - redirect to browse page
    
 -Browse after authentication 
    -Header 
