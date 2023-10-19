@@ -1,6 +1,7 @@
 # Netflix clone
    - Create React App setup
    - TailWind CSS Setup
+   - create components
    - Header
    - Login form
       
