@@ -15,6 +15,8 @@
    -created redux store with user slice
    -implement sign out 
    -update profile
+   -Bug fix- signup user dispalynameand profile pitcure update 
+   -Bug fix-IF the user no logged in redirect browse to loginpage and vice versa 
    
    
       

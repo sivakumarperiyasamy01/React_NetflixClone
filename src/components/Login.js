@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Validate } from '../utills/validate'
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utills/firbase';
-import { useNavigate } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 import { adduser } from '../utills/appslice';
 
@@ -13,7 +13,6 @@ const Login = () => {
     const[signinform,setsigninform]=useState(true)
 
     const[errormessage,seterrormessage]=useState(null)
-    const navigate=useNavigate()
     const dispatch=useDispatch()
 
 // form sign up sign in change 
@@ -56,7 +55,6 @@ const Login = () => {
                     photoURL: photoURL,
                   })
                   );
-                  navigate("/Browse")
           })
           .catch((error) => {
             seterrormessage(error.message)
@@ -70,6 +68,7 @@ const Login = () => {
 
       }
       else{
+        //Signin form 
         signInWithEmailAndPassword(auth,email?.current?.value,password?.current?.value)
         .then((userCredential) => {
           const user = userCredential.user;
@@ -87,13 +86,11 @@ const Login = () => {
                photoURL: photoURL,
              })
              );
-             navigate("/Browse")
+             
      })
      .catch((error) => {
        seterrormessage(error.message)
      });
-          navigate("/Browse")
-
           
         })
         .catch((error) => {
@@ -112,27 +109,30 @@ const Login = () => {
       <img alt="logo" src="https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_medium.jpg"></img>
       </div> 
 
-    <form onSubmit={(e)=>e.preventDefault()}   className='bg-black opacity-110 absolute w-3/12 mx-auto right-0 left-0 my-36 px-6 h-96 text-white font-bold'>
+    <form onSubmit={(e)=>e.preventDefault()}   className='w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg'>
         
-        <h1 className='font-bold my-4 text-lg'>{signinform ?"Sign In":"Sign up"}</h1>
-        {!signinform &&<input ref={name} type='text'  placeholder='Full Name' className=' bg-gray-500 p-2 m-2 w-full'/>}
+        <h1 className='font-bold my-4 text-3xl '>{signinform ?"Sign In":"Sign up"}</h1>
+        
+        {!signinform &&<input ref={name} type='text'  placeholder='Full Name' className='  bg-gray-700 p-2 m-2 w-full'/>}
         <input
          ref={email}type='text' 
           placeholder='Email address' 
-          className=' bg-gray-500 p-2 m-2 w-full'/>
+          className=' bg-gray-700 p-2 m-2 w-full'/>
 
         <input
          ref={password}
           type='password' 
           placeholder='password' 
-          className='p-2 m-2 w-full bg-gray-500'/>
+          className='bg-gray-700 p-2 m-2 w-full'/>
 
         <p className='font-bold text-lg text-red-500'>{errormessage}</p>
         
         <button
          onClick={handelbuttonclick} 
-         className='p-2 my-10 m-2  bg-red-500 w-full'>{signinform ?"Sign In":"Sign up"}</button>
-        <h3 className="cursor-pointer"
+         className='p-2 my-5 m-2  bg-red-500 w-full rounded-lg'>{signinform ?"Sign In":"Sign up"}
+         </button>
+         
+        <h3 className="cursor-pointer py-2"
          onClick={togglesigninform}> {signinform ?"New To Netflix Sign up":"Already Registerd Sigin Now"}</h3>
     </form>
     
