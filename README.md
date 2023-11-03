@@ -3,7 +3,7 @@
    - TailWind CSS Setup
    - create components
    - Header
-   - Routing
+   - Routing of app
    - Login form
    - signup form
    - Useref hook 
@@ -13,6 +13,9 @@
    -create sign up user account
    -implement sigin user api 
    -created redux store with user slice
+   -implement sign out 
+   -update profile
+   
    
       
 # Features 

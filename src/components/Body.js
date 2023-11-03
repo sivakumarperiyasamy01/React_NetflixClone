@@ -27,10 +27,14 @@ useEffect(()=>{
  onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
-    const {uid,email,displayname} = user;
-    dispatch(adduser({uid:uid,email:email,displayname:displayname}))
-    
-  
+    const {uid,email,displayName,photoURL} = user;
+    dispatch(adduser(
+      {uid:uid,
+      email:email,
+      displayName:displayName,
+      photoURL: photoURL,
+    }))
+
   } else {
     // User is signed out
     dispatch(removeuser());
