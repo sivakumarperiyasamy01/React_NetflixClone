@@ -3,10 +3,11 @@ import Header from './Header'
 import { useState } from 'react'
 import { Validate } from '../utills/validate'
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from '../utills/firbase';
-
+import { auth } from '../utills/firbase'
 import { useDispatch } from 'react-redux';
 import { adduser } from '../utills/appslice';
+import { BG_IMGAE } from '../utills/constants';
+import { PHOTO_URL } from '../utills/constants';
 
 const Login = () => {
   //form sign up sign in change variable catch 
@@ -43,7 +44,7 @@ const Login = () => {
                const user = userCredential.user;
                 updateProfile(user,{
                  displayName: name?.current?.value,
-                 photoURL:"https://lh3.googleusercontent.com/a/ACg8ocKuSelAxEB__Ug4DCoUcsjEZVXS5FAMF_sxCvx55h_qgzM=s260-c-no",
+                 photoURL:PHOTO_URL,
           })
                .then(() => {
                 const {uid,email,displayName,photoURL}= auth.currentUser;
@@ -74,7 +75,7 @@ const Login = () => {
           const user = userCredential.user;
            updateProfile(user,{
             displayName: name?.current?.value,
-            photoURL:"https://lh3.googleusercontent.com/a/ACg8ocKuSelAxEB__Ug4DCoUcsjEZVXS5FAMF_sxCvx55h_qgzM=s260-c-no",
+            photoURL:PHOTO_URL,
      })
           .then(() => {
            const {uid,email,displayName,photoURL}= auth.currentUser;
@@ -106,7 +107,7 @@ const Login = () => {
     <div >
       <Header/>
       <div  className='absolute'>
-      <img alt="logo" src="https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_medium.jpg"></img>
+      <img alt="Bgimage" src={BG_IMGAE}></img>
       </div> 
 
     <form onSubmit={(e)=>e.preventDefault()}   className='w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg'>

@@ -16,7 +16,17 @@
    -implement sign out 
    -update profile
    -Bug fix- signup user dispalynameand profile pitcure update 
-   -Bug fix-IF the user no logged in redirect browse to loginpage and vice versa 
+   -Bug fix-IF the user no logged in redirect browse to loginpage and vice versa
+   -unsubscribe to onauthchange callback
+   -adding hardcore values to constant files 
+   -Register Tmdb api and create an app get acess token 
+   -Get data from tmdb now playing movie list api 
+   -custom hook for now playing movies 
+   -create a movie slice put all data in to store 
+   -update store with movie data 
+   -plannig for maincontainer and secondary container 
+   -fetch data for trailer video and put it in store 
+   -Embedded youtube video and make it auto play and make dynaic using store data 
    
    
       
