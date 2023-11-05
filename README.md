@@ -29,7 +29,7 @@
    -Embedded youtube video and make it auto play and make dynaic using store data 
    
    
-      
+     
 # Features 
    - Signin/Signup page
    - redirect to browse page
