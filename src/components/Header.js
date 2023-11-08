@@ -8,13 +8,19 @@ import { auth } from '../utills/firbase';
 import { adduser,removeuser } from '../utills/appslice';
 import { useDispatch } from 'react-redux';
 import { LOGO } from '../utills/constants';
+import { ToggleGptSearchview } from '../utills/GptsearchSlice';
 
 
 
 const Header = () => {
+
   const navigate=useNavigate();
   const user=useSelector(store=>store.user)
   const dispatch=useDispatch();
+
+  const GptSearchhandler=()=>{
+    dispatch(ToggleGptSearchview())
+  };
 
   const onclickhandler=()=>{
       
@@ -54,8 +60,10 @@ const Header = () => {
       <img alt="logo" className="w-44" src={LOGO}></img>
 
       {user && <div className='flex p-4'>
-       <img alt="usericon" className="w-12 h-12 "src={user?.photoURL}></img>
+      <button onClick={GptSearchhandler} className='bg-purple-500 px-4 mx-3 '>Search</button>
+      <img alt="usericon" className="w-12 h-12 "src={user?.photoURL}></img>
       <button onClick={onclickhandler} className='font-bold text-white' >(Sign Out)</button>
+      
       </div>}
      
     </div>
