@@ -29,6 +29,7 @@
    - Build scondary container movie list 
    - custom hook creation fetch list of movies using tmdbi api calls 
    - updating store
+   - Gpt search component with toggle feature
 
 
 # Features 
