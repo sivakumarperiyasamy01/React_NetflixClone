@@ -9,8 +9,8 @@ import { adduser,removeuser } from '../utills/appslice';
 import { useDispatch } from 'react-redux';
 import { LOGO } from '../utills/constants';
 import { ToggleGptSearchview } from '../utills/GptsearchSlice';
-
-
+import { changelanguage} from "../utills/langugageSlice";
+import { LANG_CHANGE } from '../utills/constants';
 
 const Header = () => {
 
@@ -21,6 +21,10 @@ const Header = () => {
   const GptSearchhandler=()=>{
     dispatch(ToggleGptSearchview())
   };
+
+  const changehandeler=(e)=>{
+    dispatch(changelanguage(e.target.value))
+  }
 
   const onclickhandler=()=>{
       
@@ -60,7 +64,10 @@ const Header = () => {
       <img alt="logo" className="w-44" src={LOGO}></img>
 
       {user && <div className='flex p-4'>
-      <button onClick={GptSearchhandler} className='bg-purple-500 px-4 mx-3 '>Search</button>
+      <select className='bg-black text-white m-2' onChange={changehandeler}>
+        {LANG_CHANGE.map((lang)=><option key={lang.identifier}value={lang.identifier}>{lang.name}</option>)}
+      </select>
+      <button onClick={GptSearchhandler} className='bg-purple-500 px-4 m-2'>Search</button>
       <img alt="usericon" className="w-12 h-12 "src={user?.photoURL}></img>
       <button onClick={onclickhandler} className='font-bold text-white' >(Sign Out)</button>
       
