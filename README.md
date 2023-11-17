@@ -30,6 +30,10 @@
    - custom hook creation fetch list of movies using tmdbi api calls 
    - updating store
    - Gpt search component with toggle feature
+   - Gpt search bar
+   - Gpt Search page 
+   - Multilangugae feature in out app 
+   
 
 
 # Features 
