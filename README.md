@@ -1,19 +1,12 @@
 # Netflix clone
    - Create React App setup
    - TailWind CSS Setup
-   - create components
-   - Header
    - Routing of app
-   - Login form
-   - signup form
-   - Useref hook 
-   - Form validation
-   - firebase setup
-   - deploying our app to production
-   - create sign up user account
-   - implement sigin user api 
-   - created redux store with user slice
-   - implement sign out 
+   - toggle Login form/signup form design 
+   - Form validation check 
+   - firebase setup for authentication
+   - Sign in sigup logic and signout logic for authentication 
+   - Redux toolkit for state management
    - update profile
    - Bug fix- signup user dispalynameand profile pitcure updateForm validation
    - unsubscribe to onauthchange callback
@@ -31,7 +24,6 @@
    - updating store
    - Gpt search component with toggle feature
    - Gpt search bar
-   - Gpt Search page 
    - Multilangugae feature in out app 
    
 
