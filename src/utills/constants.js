@@ -28,6 +28,3 @@ export const LANG_CHANGE = [
     name: "Hindhi",
   },
 ];
-
-export const GPT_API_KEY =
-  "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";
