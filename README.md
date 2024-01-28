@@ -26,9 +26,6 @@
    - Gpt search bar
    - Multilangugae feature in out app 
    
-![signin page](https://github.com/sivakumarperiyasamy01/React_NetflixClone/assets/139151119/1dc6e199-9a2d-4c71-9e9f-8bec4136967b)
-![signup form](https://github.com/sivakumarperiyasamy01/React_NetflixClone/assets/139151119/513acd14-7041-45bf-aa90-3a674190d8ce)
-
 
 # Features 
    - Signin/Signup page
